@@ -4,7 +4,7 @@ import fs from "fs"; // for using file system manipulation functions
 import path from "path"; // joins two paths
 import 'dotenv/config'
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const localStorage = new LocalStorage("./Data");
 const directory = "./Data";
 
