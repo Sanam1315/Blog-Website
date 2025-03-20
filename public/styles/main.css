@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+
+}
+
+/* For index.ejs */
+#main{
+    padding: 1rem 1.5rem;
+    color: #fff;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+nav h1{
+    color: white;
+}
+nav div a{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+#post{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#post div{
+    display: flex;
+    gap: 0.5rem;
+}
+#post div button{
+    padding: 0.3rem 0.8rem;
+    background-color: chartreuse;
+    color: red;
+    border: none;
+    border-radius: 5px;
+}
+#date_author{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+}
+
+/* For index.ejs form part*/
+#index-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#index-form form input,textarea{
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.3rem;
+    color: #fff;
+    font-size: 1rem;
+}
+#index-form form button{
+    border: none;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0.3rem 0.8rem;
+}
+
+
+/* For post.ejs */
+#create-post{
+    color: white;
+    padding: 1rem 1.5rem;
+}
+#create-post form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#create-post form label{
+    font-size: 1.5rem;
+}
+#title,#content,#image_url,#author{
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.3rem;
+    color: #fff;
+    font-size: 1rem;
+}
+#create-post button{
+    border: none;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0.3rem 0.8rem;
+}
+
+/* Responsive Code */
+@media screen and (min-width:800px) and (max-width:1350px) {
+    #post img{
+        height: 70vh;
+        width: 80vw;
+    }
+    #posts{
+        margin: 0 7rem;
+    }
+}

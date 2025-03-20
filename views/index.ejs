@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <%- include('particals/header.ejs')%> <% if (locals.error) {%>
+      <h1><%=error%></h1>
+      <%}else{%> %> <% if(key){ %>
+      <div id="posts">
+        <% if(data) data.map((item,index)=>{%>
+        <div id="post">
+          <h2><%= item.title %></h2>
+          <% if(item.image_url){ %>
+          <img
+            src="<%= item.image_url%>"
+            alt="Not Available"
+            height="100%"
+            width="100%"
+          />
+          <% } %>
+
+          <p><%= item.content %></p>
+          <div id="date_author">
+            <h2>Posted by : <%=item.author%></h2>
+            <h2><%=item.date%></h2>
+          </div>
+          <div>
+            <form action="/edit" method="post">
+              <button type="submit" name="submit" value="<%= item.title%>">
+                Edit
+              </button>
+            </form>
+            <form action="/delete" method="post">
+              <button type="submit" name="submit" value="<%= item.title%>">
+                Delete
+              </button>
+            </form>
+          </div>
+        </div>
+        <%}) %>
+      </div>
+      <% }else{ %>
+      <div id="index-form">
+        <form action="/edited" method="post">
+          <input type="text" name="title" value="<%= data.title %>" readonly />
+          <input
+            type="text"
+            name="image_url"
+            value="<%=data.image_url%>"
+            readonly
+          />
+          <textarea
+            rows="5"
+            type="text"
+            name="content"
+            value="<%= data.content%>"
+          >
+<%= data.content%></textarea
+          >
+          <input type="text" name="author" value="<%=data.author%>" />
+          <button type="submit" name="submit" value="<%= data.title%>">
+            Submit
+          </button>
+        </form>
+      </div>
+      <% } %> <%}%>
+    </div>
+  </body>
+</html>
